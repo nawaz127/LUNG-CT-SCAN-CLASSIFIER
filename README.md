@@ -18,38 +18,42 @@ python src\1_split_dataset.py --src data\raw --dst data\processed --val 0.2 --te
 
 
 ## 📦 Project Layout (key folders)
-E:\Project\lung-ct-3class_FINAL
-├─ .streamlit\ # Streamlit server config (upload limits)
-├─ app
-│ └─ streamlit_app.py # 3-model demo + Grad-CAM + download buttons
-├─ data
-│ ├─ raw\ # put your original dataset here
-│ └─ processed\ # split dataset (train/val/test) goes here
-├─ experiments
-│ ├─ exp01_resnet
-│ ├─ exp02_vit
-│ └─ exp03_resvit\ # each contains best.pt, figs/, *.npz, evaluation.json, etc.
-├─ src
-│ ├─ 1_split_dataset.py
-│ ├─ 2_train.py
-│ ├─ 3_eval.py
-│ ├─ 4_make_gradcam_panel.py
-│ ├─ 5_update_readme.py
-│ ├─ 6_plot_curves.py
-│ ├─ 7_plot_confmat.py # alias: 7_plot_confusion_and_classwise.py
-│ ├─ 7_plot_confusion_and_classwise.py # generates confusion_matrix.png + classwise_metrics.md
-│ ├─ 8_calibration_and_thresholds.py
-│ ├─ 9_temp_scaling_and_calibration_metrics.py
-│ ├─ 10_export_calibrated_checkpoint.py
-│ ├─ models
-│ │ ├─ resnet.py
-│ │ ├─ vit.py
-│ │ └─ resvit.py # hybrid CNN+ViT with CAM targets (CNN/ViT selectable)
-│ └─ utils
-│ └─ gradcam_utils.py
-├─ pyproject.toml # installable package (editable)
+lung-ct-3class_FINAL/
+├─ app/
+│  └─ streamlit_app.py
+├─ data/
+│  ├─ raw/
+│  └─ processed/
+├─ experiments/
+│  ├─ exp01_resnet/
+│  ├─ exp02_vit/
+│  └─ exp03_resvit/
+├─ scripts/                    # CLI entrypoints (wrappers)
+│  ├─ split_dataset.py
+│  ├─ train.py
+│  ├─ eval.py
+│  ├─ plot_curves.py
+│  ├─ plot_confusion_and_classwise.py
+│  ├─ calibration_and_thresholds.py
+│  ├─ temp_scaling_and_calibration_metrics.py
+│  ├─ export_calibrated_checkpoint.py
+│  └─ update_readme.py
+├─ src/                        # importable package code
+│  ├─ __init__.py
+│  ├─ models/
+│  │  ├─ __init__.py
+│  │  ├─ resnet.py
+│  │  ├─ vit.py
+│  │  └─ resvit.py
+│  └─ utils/
+│     ├─ __init__.py
+│     └─ gradcam_utils.py
+├─ .streamlit/
+│  └─ config.toml
+├─ pyproject.toml
 ├─ requirements.txt
-└─ README.md 
+├─ .gitignore
+└─ README.md
 
 
 ## 🖼️ Figures (existing files under `figs/`)
