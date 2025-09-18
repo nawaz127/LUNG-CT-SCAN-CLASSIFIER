@@ -1,6 +1,6 @@
 # Lung CT SCAN Classification (Normal / Benign / Malignant)
 
-End‑to‑end pipeline to train, evaluate, **compare ResNet50 / ViT-B/16 / ResViT**, visualize **Grad-CAM**, and deploy with **Streamlit**.
+End‑to‑end pipeline to train, evaluate, **compare ResNet50 / Vision Transformer / Res+ViT**, visualize **Grad-CAM**, and deploy with **Streamlit**.
 
  ⚠️ Research demo only — **not** for clinical use.
 
