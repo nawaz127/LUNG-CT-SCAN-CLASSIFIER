@@ -8,14 +8,14 @@ End‑to‑end pipeline to train, evaluate, **compare ResNet50 / ViT-B/16 / ResV
 
 Expected layout under data/processed/:
 
-![](Screenshot%202025-09-18%20212518.png)
+![](data.png)
 
 Need splits from a single pool?
 python src\1_split_dataset.py --src data\raw --dst data\processed --val 0.2 --test 0.2 --seed 42
 
 
 ## 📦 Project Layout (key folders)
-![](Screenshot%202025-09-18%20212100.png)
+![](folder.png)
 
 
 ## 🖼️ Figures (existing files under `figs/`)
