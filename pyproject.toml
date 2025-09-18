@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lung-ct-3class"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = [
+  "torch>=2.2", "torchvision>=0.17", "numpy>=1.26", "pillow>=10.1",
+  "opencv-python", "tqdm", "scikit-learn", "matplotlib",
+    "streamlit>=1.36", "pyyaml", "tabulate"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

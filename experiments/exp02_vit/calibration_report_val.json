@@ -1,0 +1,13 @@
+{
+  "split": "val",
+  "classes": [
+    "Bengin cases",
+    "Malignant cases",
+    "Normal cases"
+  ],
+  "temperature": 0.75,
+  "ece_before": 0.03944076118172247,
+  "ece_after": 0.03529368284251864,
+  "brier_before": 0.09371770618227203,
+  "brier_after": 0.09337784814542748
+}

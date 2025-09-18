@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+.env
+.ipynb_checkpoints/
+
+# Data / outputs (keep repo light)
+data/raw/
+data/processed/*
+
+# Experiments (keep metadata & images, ignore heavy tensors by default)
+experiments/**/best.pt
+experiments/**/best_temp_scaled.pt
+experiments/**/probs_*.npz
+
+# Streamlit caches
+.streamlit/credentials.toml
+.streamlit/secrets.toml
