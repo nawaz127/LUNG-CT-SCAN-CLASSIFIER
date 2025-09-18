@@ -2,58 +2,20 @@
 
 End‑to‑end pipeline to train, evaluate, **compare ResNet50 / ViT-B/16 / ResViT**, visualize **Grad-CAM**, and deploy with **Streamlit**.
 
-> ⚠️ Research demo only — **not** for clinical use.
+ ⚠️ Research demo only — **not** for clinical use.
 
 ## 🗂️ Dataset
 
-Expected layout under `data/processed/`:
+Expected layout under data/processed/:
 
-data/processed/
-├─ Benign/
-├─ Malignant/
-└─ Normal/
+![](Screenshot%202025-09-18%20212518.png)
 
 Need splits from a single pool?
 python src\1_split_dataset.py --src data\raw --dst data\processed --val 0.2 --test 0.2 --seed 42
 
 
 ## 📦 Project Layout (key folders)
-lung-ct-3class_FINAL/
-├─ app/
-│  └─ streamlit_app.py
-├─ data/
-│  ├─ raw/
-│  └─ processed/
-├─ experiments/
-│  ├─ exp01_resnet/
-│  ├─ exp02_vit/
-│  └─ exp03_resvit/
-├─ scripts/                    # CLI entrypoints (wrappers)
-│  ├─ split_dataset.py
-│  ├─ train.py
-│  ├─ eval.py
-│  ├─ plot_curves.py
-│  ├─ plot_confusion_and_classwise.py
-│  ├─ calibration_and_thresholds.py
-│  ├─ temp_scaling_and_calibration_metrics.py
-│  ├─ export_calibrated_checkpoint.py
-│  └─ update_readme.py
-├─ src/                        # importable package code
-│  ├─ __init__.py
-│  ├─ models/
-│  │  ├─ __init__.py
-│  │  ├─ resnet.py
-│  │  ├─ vit.py
-│  │  └─ resvit.py
-│  └─ utils/
-│     ├─ __init__.py
-│     └─ gradcam_utils.py
-├─ .streamlit/
-│  └─ config.toml
-├─ pyproject.toml
-├─ requirements.txt
-├─ .gitignore
-└─ README.md
+![](Screenshot%202025-09-18%20212100.png)
 
 
 ## 🖼️ Figures (existing files under `figs/`)
@@ -82,7 +44,7 @@ lung-ct-3class_FINAL/
 ![calibration_2_Normal cases](experiments/exp01_resnet/figs/calibration_2_Normal%20cases.png)
 
 
-### ✅ ViT-B/16 — `experiments/exp02_vit/figs/`
+### ✅ ViT-B/16 — experiments/exp02_vit/figs/
 
 **Confusion Matrix**  
 ![confusion matrix](experiments/exp02_vit/figs/confusion_matrix.png)
@@ -103,7 +65,7 @@ lung-ct-3class_FINAL/
 ![calibration_2_Normal cases](experiments/exp02_vit/figs/calibration_2_Normal%20cases.png)
 
 
-### ✅ ResViT — `experiments/exp03_resvit/figs/`
+### ✅ ResViT — experiments/exp03_resvit/figs/
 
 **Confusion Matrix**  
 ![confusion matrix](experiments/exp03_resvit/figs/confusion_matrix.png)
@@ -123,13 +85,6 @@ lung-ct-3class_FINAL/
 ![calibration_1_Malignant cases](experiments/exp03_resvit/figs/calibration_1_Malignant%20cases.png)
 ![calibration_2_Normal cases](experiments/exp03_resvit/figs/calibration_2_Normal%20cases.png)
 
-## 🗂️ Dataset
-
-data/processed/
-├─ Benign/
-├─ Malignant/
-└─ Normal/
-
 
 ## 🖥️ Streamlit App
 
@@ -140,6 +95,8 @@ python -m streamlit run app\streamlit_app.py
 - Single or 3‑model compare
 - **ResViT** CAM toggle: CNN last conv ↔ ViT last block
 - Download **Grad‑CAM overlays** as PNG
-- Upload an `evaluation.json` to auto‑detect trained class order
+- Upload an evaluation.json`to auto‑detect trained class order
 
+## 📜 License
 
+MIT (add a LICENSE file if open‑sourcing).
